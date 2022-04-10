@@ -31,7 +31,9 @@ Authentification tokens --
 Coin Market CAP Key -- 56e70969-b8cf-4037-8b36-6f624dad1cc0
 
 ToDo -- 
-1. GIT Hub Repo Config
+1. GIT Hub Repo Config 
 2. Research on CMC API Doc 
 3. Connect VS to GIT & connect Google VM to GIT
 4. COnfigure MYSQL DB ---- Businesscase TBD
+
+test commit
