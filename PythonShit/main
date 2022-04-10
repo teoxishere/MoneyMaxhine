@@ -1,0 +1,25 @@
+from requests import Request, Session
+from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+import json
+import datetime
+url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+parameters = {
+  'start':'1',
+  'limit':'5000',
+  'convert':'USD'
+}
+headers = {
+  'Accepts': 'application/json',
+  'X-CMC_PRO_API_KEY': '56e70969-b8cf-4037-8b36-6f624dad1cc0',
+}
+
+session = Session()
+session.headers.update(headers)
+
+try:
+  response = session.get(url, params=parameters)
+  data = json.loads(response.text)
+  with open("data_load" + datetime.date.today() + ".txt", "a") as outfile:
+    json.dump(data, outfile)
+except (ConnectionError, Timeout, TooManyRedirects) as e:
+  print(e)
